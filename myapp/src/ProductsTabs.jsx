@@ -1,12 +1,18 @@
 import Product from "./Product"
 function ProductTabs(){
-    let options = ["HighTech","Smooth Expirence","Fast"]
+    let styles = {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+    }
     return (
-        <>
-        <Product title = "Phone" price = {70000} feature={options}/>
-        <Product title = "Laptop" price = {130000} feature={options}/>
-        <Product title = "Pen" price = {100} feature={options}/>
-        </>
+        <div style={styles}>
+        <Product title="Logitech MX Master" idx={0}/>
+        <Product title="Apple Pencil (2nd Gen)" idx={1}/>
+        <Product title="Zebronics zeb-transformer" idx={2}/>
+        <Product title="Petronics toad 23" idx={3}/>
+        </div>
     )
 }
 

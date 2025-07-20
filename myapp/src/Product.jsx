@@ -1,17 +1,17 @@
 import "./Product.css"
-function Product({ title, price, feature }) {
-    let isDiscount = price > 30000;
-    let styles = {backgroundColor: isDiscount ? "blue":"red"};
+import Price from './Price'
+
+function Product({title,idx}) {
+
+    let oldPrices = ["12,999","16,999","7000","1299"];
+    let newPrices = ["9,999","11,999","3,999","699"];
+    let description = [["8000 DPI","5 Programmble Buttons"],["Made for ipad","Designed for ipads"],["Super base","intutive"],["True wireless","optcal orientation"]]
     return (
-        <div className="Product" style = {styles}>
-            <h3>{title}</h3>
-            <p>Price: {price}</p>
-            <p>feature:
-                {feature.map((e) => (
-                    <li>{e}</li>
-                ))}
-            </p>
-            <p>{isDiscount && <p>5% discount</p>}</p>
+        <div className="Product">
+            <h4>{title}</h4>
+            <p>{description[idx][0]}</p>
+            <p>{description[idx][1]}</p>
+            <Price oldPrice={oldPrices[idx]} newPrice={newPrices[idx]}/>
         </div>
     )
 }
